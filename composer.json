@@ -1,0 +1,54 @@
+{
+    "name": "craftlogan/laravel-overflow",
+    "description": "The Laravel Overflow package will allow to easily add an overflow column to a form request. Use this package to make it easy to store overflow request values in a json column on database table:)",
+    "keywords": [
+        "craftlogan",
+        "laravel-overflow"
+    ],
+    "homepage": "https://github.com/craftlogan/laravel-overflow",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Logan H. Craft",
+            "email": "craftlogan@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "5.8.*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "3.8.*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "CraftLogan\\LaravelOverflow\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CraftLogan\\LaravelOverflow\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CraftLogan\\LaravelOverflow\\LaravelOverflowServiceProvider"
+            ],
+            "aliases": {
+                "LaravelOverflow": "CraftLogan\\LaravelOverflow\\LaravelOverflowFacade"
+            }
+        }
+    }
+}
