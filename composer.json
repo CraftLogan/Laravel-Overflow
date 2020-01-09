@@ -1,6 +1,6 @@
 {
     "name": "craftlogan/laravel-overflow",
-    "description": "The Laravel Overflow package will allow to easily add an overflow column to a form request. Use this package to make it easy to store overflow request values in a json column on database table:)",
+    "description": "The Laravel Overflow package will allow adding an overflow column to a form request easily. Use this package to make it easy to store overflow request values in a JSON or Text column on a database table:)",
     "keywords": [
         "craftlogan",
         "laravel-overflow"
