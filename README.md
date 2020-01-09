@@ -20,13 +20,48 @@ composer require craftlogan/laravel-overflow
 Defining the overflow column and table using a custom form request:
 
 ``` php
-// Usage description here
+<?php
+
+namespace App\Http\Requests;
+
+use Illuminate\Foundation\Http\FormRequest;
+use CraftLogan\LaravelOverflow\Overflowable;
+
+class CustomFormRequest extends FormRequest
+{
+    use Overflowable;
+    public $table = 'programs';
+    public $overflow_column = 'properties';
+
+    /**
+     * Determine if the user is authorized to make this request.
+     *
+     * @return bool
+     */
+    public function authorize()
+    {
+        return true;
+    }
+
+    /**
+     * Get the validation rules that apply to the request.
+     *
+     * @return array
+     */
+    public function rules()
+    {
+        return [];
+    }
+}
 ```
 
 Using with the CREATE Method:
 
 ``` php
-// Usage description here
+public function store(CustomFormRequest $request)
+{
+    $mymodel = MyModel::create($request->allWithOverflow());
+}
 ```
 
 Using with the object Attributes:

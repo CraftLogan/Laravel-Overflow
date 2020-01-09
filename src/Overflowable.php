@@ -7,7 +7,7 @@ trait Overflowable{
 
     public function allWithOverflow()
     {
-        $properties[$this->overflow_column] = json_encode($this->overflow());
+        $properties[$this->overflow_column] = $this->overflow();
         return array_merge($properties, $this->getColumns());
     }
 
@@ -24,6 +24,7 @@ trait Overflowable{
         $columnNames = $this->getTableColumns();
         $columnNames = array_fill_keys($columnNames, "");
         $attributes = array_diff_key($this->all(), $columnNames);
+        $attributes = json_encode($attributes);
         return $attributes;
     }
 
