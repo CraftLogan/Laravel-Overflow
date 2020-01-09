@@ -2,7 +2,8 @@
 
 # Laravel Overflow
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/craftlogan/laravel-overflow.svg?style=flat-square)](https://packagist.org/packages/craftlogan/laravel-overflow)
-[![Build Status](https://img.shields.io/travis/craftlogan/laravel-overflow/master.svg?style=flat-square)](https://travis-ci.org/craftlogan/laravel-overflow)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/spatie/laravel-responsecache/run-tests?label=tests)
+[![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Quality Score](https://img.shields.io/scrutinizer/g/craftlogan/laravel-overflow.svg?style=flat-square)](https://scrutinizer-ci.com/g/craftlogan/laravel-overflow)
 [![Total Downloads](https://img.shields.io/packagist/dt/craftlogan/laravel-overflow.svg?style=flat-square)](https://packagist.org/packages/craftlogan/laravel-overflow)
 
