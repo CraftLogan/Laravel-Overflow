@@ -1,13 +1,15 @@
-![Laravel Overflow Logo](https://raw.githubusercontent.com/CraftLogan/Laravel-Overflow/master/Laravel%20Overflow.png)
+![Laravel Overflow Logo](https://raw.githubusercontent.com/CraftLogan/Laravel-Overflow/master/Laravel%20Overflow.png#logo)
 
-# Laravel Overflow
+
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/craftlogan/laravel-overflow.svg?style=flat-square)](https://packagist.org/packages/craftlogan/laravel-overflow)
 ![GitHub Workflow Status](https://img.shields.io/github/workflow/status/spatie/laravel-responsecache/run-tests?label=tests)
 [![MIT Licensed](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
 [![Quality Score](https://img.shields.io/scrutinizer/g/craftlogan/laravel-overflow.svg?style=flat-square)](https://scrutinizer-ci.com/g/craftlogan/laravel-overflow)
 [![Total Downloads](https://img.shields.io/packagist/dt/craftlogan/laravel-overflow.svg?style=flat-square)](https://packagist.org/packages/craftlogan/laravel-overflow)
 
-The Laravel Overflow package will allow to easily add an overflow column to a form request. Use this package to make it easy to store overflow request values in a json column on database table:)
+# Laravel Overflow
+
+The Laravel Overflow package will allow adding an overflow column to a form request easily. Use this package to make it easy to store overflow request values in a JSON or Text column on a database table:)
 ## Installation
 
 You can install the package via composer:
@@ -23,16 +25,17 @@ Defining the overflow column and table using a custom form request:
 ``` php
 <?php
 
-namespace App\Http\Requests;
+namespace CraftLogan\LaravelOverflow\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 use CraftLogan\LaravelOverflow\Overflowable;
 
-class CustomFormRequest extends FormRequest
+class OverflowFormRequest extends FormRequest
 {
     use Overflowable;
-    public $table = 'programs';
+    public $table = 'test_models';
     public $overflow_column = 'properties';
+
 
     /**
      * Determine if the user is authorized to make this request.
@@ -61,15 +64,35 @@ Using with the CREATE Method:
 ``` php
 public function store(CustomFormRequest $request)
 {
-    $mymodel = MyModel::create($request->allWithOverflow());
+    $testmodel = TestModel::create($request->allWithOverflow());
 }
 ```
 
 Using with the object Attributes:
 
 ``` php
-// Usage description here
+        $testmodel = new TestModel();
+        $testmodel->name = $request->name;
+        $testmodel->properties = $request->overflow();
+        $testmodel->save();
 ```
+
+
+When setting up a migration you can use a json column or a text column:
+
+``` php
+    public function up()
+    {
+        Schema::create('test_models', function (Blueprint $table){
+            $table->increments('id');
+            //$table->text('properties');  // Use this column type if you are using sqlite or a mysql version less than 5.7
+            //$table->json('properties');  // If your database supports json then I would recommend using the json column
+            $table->timestamps();
+        });
+    }
+
+```
+
 
 ### Testing
 
@@ -85,9 +108,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recen
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
-### Security
-
-If you discover any security related issues, please email craftlogan@gmail.com instead of using the issue tracker.
 
 ## Credits
 
@@ -98,6 +118,5 @@ If you discover any security related issues, please email craftlogan@gmail.com i
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-## Laravel Package Boilerplate
 
-This package was generated using the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com).
+This package used scafolding from the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com) built by [Marcel Pociot](https://twitter.com/marcelpociot)
