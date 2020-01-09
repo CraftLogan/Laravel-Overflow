@@ -1,5 +1,6 @@
-# Laravel Overflow
+![Laravel Overflow Logo](https://raw.githubusercontent.com/CraftLogan/Laravel-Overflow/master/Laravel%20Overflow.png)
 
+# Laravel Overflow
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/craftlogan/laravel-overflow.svg?style=flat-square)](https://packagist.org/packages/craftlogan/laravel-overflow)
 [![Build Status](https://img.shields.io/travis/craftlogan/laravel-overflow/master.svg?style=flat-square)](https://travis-ci.org/craftlogan/laravel-overflow)
 [![Quality Score](https://img.shields.io/scrutinizer/g/craftlogan/laravel-overflow.svg?style=flat-square)](https://scrutinizer-ci.com/g/craftlogan/laravel-overflow)
