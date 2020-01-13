@@ -13,16 +13,14 @@ trait Overflowable{
 
     public function getColumns()
     {
-        $columnNames = $this->getTableColumns();
-        $columnNames = array_fill_keys($columnNames, "");
+        $columnNames = $this->getColumnNames();
         $attributes = array_intersect_key($this->all(), $columnNames);
         return $attributes;
     }
 
     public function overflow()
     {
-        $columnNames = $this->getTableColumns();
-        $columnNames = array_fill_keys($columnNames, "");
+        $columnNames = $this->getColumnNames();
         $attributes = array_diff_key($this->all(), $columnNames);
         $attributes = json_encode($attributes);
         return $attributes;
@@ -32,4 +30,12 @@ trait Overflowable{
     {
         return Schema::getColumnListing($this->table);
     }
+
+    public function getColumnNames()
+    {
+        $columnNames = $this->getTableColumns();
+        $columnNames = array_fill_keys($columnNames, "");
+        return $columnNames;
+    }
+
 }
