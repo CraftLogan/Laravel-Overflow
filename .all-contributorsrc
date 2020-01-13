@@ -22,6 +22,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "bitpressio",
+      "name": "Bitpress",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/17488321?v=4",
+      "profile": "http://bitpress.io",
+      "contributions": [
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
