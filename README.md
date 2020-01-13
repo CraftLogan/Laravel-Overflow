@@ -107,23 +107,6 @@ composer test
 
 Please see [CHANGELOG](CHANGELOG.md) for more information what has changed recently.
 
-## Contributing
-
-Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-
-## Credits
-
-- [Logan H. Craft](https://github.com/craftlogan)
-- [Daniel](https://github.com/DanielGilB)
-- [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
-
-
-This package used scafolding from the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com) built by [Marcel Pociot](https://twitter.com/marcelpociot)
 
 ## Contributors ✨
 
@@ -143,4 +126,16 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
+
+## Contributing
+
+Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
+
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+
+This package used scafolding from the [Laravel Package Boilerplate](https://laravelpackageboilerplate.com) built by [Marcel Pociot](https://twitter.com/marcelpociot)
