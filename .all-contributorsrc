@@ -22,6 +22,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "laravelnews",
+      "name": "Laravel News",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6818566?v=4",
+      "profile": "https://laravel-news.com",
+      "contributions": [
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
