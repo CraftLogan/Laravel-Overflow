@@ -13,6 +13,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "CraftLogan",
+      "name": "Logan H. Craft",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/10950466?v=4",
+      "profile": "https://logancraft.dev",
+      "contributions": [
+        "code"
+      ]
     }
   ],
   "contributorsPerLine": 7,
