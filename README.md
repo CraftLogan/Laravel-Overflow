@@ -112,6 +112,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 ## Credits
 
 - [Logan H. Craft](https://github.com/craftlogan)
+- [Daniel](https://github.com/DanielGilB)
 - [All Contributors](../../contributors)
 
 ## License
