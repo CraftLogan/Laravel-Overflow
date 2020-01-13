@@ -22,6 +22,15 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "paulredmond",
+      "name": "Paul Redmond",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/177773?v=4",
+      "profile": "https://twitter.com/paulredmond",
+      "contributions": [
+        "blog"
+      ]
     }
   ],
   "contributorsPerLine": 7,
