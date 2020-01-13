@@ -1,6 +1,6 @@
 ![Laravel Overflow Logo](https://raw.githubusercontent.com/CraftLogan/Laravel-Overflow/master/Laravel%20Overflow.png#logo)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -117,8 +117,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://logancraft.dev"><img src="https://avatars0.githubusercontent.com/u/10950466?v=4" width="100px;" alt=""/><br /><sub><b>Logan H. Craft</b></sub></a><br /><a href="https://github.com/CraftLogan/Laravel-Overflow/commits?author=CraftLogan" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/DanielGilB"><img src="https://avatars0.githubusercontent.com/u/32772927?v=4" width="100px;" alt=""/><br /><sub><b>Daniel</b></sub></a><br /><a href="https://github.com/CraftLogan/Laravel-Overflow/commits?author=DanielGilB" title="Code">💻</a></td>
+    <td align="center"><a href="https://logancraft.dev"><img src="https://avatars0.githubusercontent.com/u/10950466?v=4" width="100px;" alt=""/><br /><sub><b>Logan H. Craft</b></sub></a><br /><a href="https://github.com/CraftLogan/Laravel-Overflow/commits?author=CraftLogan" title="Code">💻</a></td>
+    <td align="center"><a href="http://bitpress.io"><img src="https://avatars1.githubusercontent.com/u/17488321?v=4" width="100px;" alt=""/><br /><sub><b>Bitpress</b></sub></a><br /><a href="#blog-bitpressio" title="Blogposts">📝</a></td>
   </tr>
 </table>
 
