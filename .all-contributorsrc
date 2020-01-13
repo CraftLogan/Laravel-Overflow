@@ -24,6 +24,15 @@
       ]
     },
     {
+      "login": "laravelnews",
+      "name": "Laravel News",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/6818566?v=4",
+      "profile": "https://laravel-news.com",
+       "contributions": [
+        "blog"
+      ]
+      },
+      {
       "login": "paulredmond",
       "name": "Paul Redmond",
       "avatar_url": "https://avatars3.githubusercontent.com/u/177773?v=4",
