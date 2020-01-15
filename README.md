@@ -23,7 +23,7 @@ composer require craftlogan/laravel-overflow
 
 ## Usage
 
-Defining the overflow column and table using a custom form request:
+Extend a form request using the OverflowFromRequest and specify the model to catch overflow.
 
 ``` php
 <?php
