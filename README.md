@@ -36,7 +36,7 @@ class CustomFormRequest extends OverflowFormRequest
 {
     public function __construct()
     {
-        parent::__construct(new TestModel  // Your Eloquent Model);
+        parent::__construct(new TestModel);  // Your Eloquent Model
     }
     /**
      * Determine if the user is authorized to make this request.
