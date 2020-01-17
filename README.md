@@ -23,23 +23,21 @@ composer require craftlogan/laravel-overflow
 
 ## Usage
 
-Defining the overflow column and table using a custom form request:
+Extend a form request using the OverflowFromRequest and specify the model to catch overflow.
 
 ``` php
 <?php
-
-namespace CraftLogan\LaravelOverflow\Requests;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use CraftLogan\LaravelOverflow\Overflowable;
+use CraftLogan\LaravelOverflow\Requests\OverflowFormRequest
 
-class OverflowFormRequest extends FormRequest
+class CustomFormRequest extends OverflowFormRequest
 {
-    use Overflowable;
-    public $table = 'test_models';
-    public $overflow_column = 'properties';
-
-
+    public function __construct()
+    {
+        parent::__construct(new TestModel);  // Your Eloquent Model
+    }
     /**
      * Determine if the user is authorized to make this request.
      *

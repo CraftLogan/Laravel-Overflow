@@ -84,7 +84,7 @@ class OverflowTest extends TestCase
             \Symfony\Component\HttpFoundation\Request::create(
                 'overflowTest/',
                 'POST',
-                $parameters,
+                $parameters
             )
         );
     }
