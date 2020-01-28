@@ -2,6 +2,9 @@
 
 namespace CraftLogan\LaravelOverflow;
 
+use CraftLogan\LaravelOverflow\Requests\OverflowFormRequest;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\Request;
 use Illuminate\Support\ServiceProvider;
 
 class LaravelOverflowServiceProvider extends ServiceProvider
@@ -11,7 +14,10 @@ class LaravelOverflowServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Request::macro('overflow', function (Model $model, $properties = "properties") {
+            $overflow = new OverflowFormRequest($model, $properties);
+            return $overflow->overflow();
+        });
     }
 
     /**
