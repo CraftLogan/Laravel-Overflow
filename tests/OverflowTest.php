@@ -2,6 +2,8 @@
 
 namespace CraftLogan\LaravelOverflow\Tests;
 
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Facade;
 use Orchestra\Testbench\TestCase;
 use CraftLogan\LaravelOverflow\Models\TestModel;
 use CraftLogan\LaravelOverflow\Requests\TestOverflowFormRequest;
@@ -10,11 +12,22 @@ class OverflowTest extends TestCase
 {
     public function setUp(): void
     {
+
         parent::setUp();
+
+        $this->app = $this->createApplication();
+
 
         require_once __DIR__ . '/../database/migrations/create_test_models_table.php';
 
         (new \CreateTestModelsTable())->up();
+    }
+
+    protected function getPackageProviders($app)
+    {
+        return [
+            'CraftLogan\LaravelOverflow\LaravelOverflowServiceProvider'
+        ];
     }
 
     /** @test */
@@ -77,10 +90,37 @@ class OverflowTest extends TestCase
         $testmodel->save();
         $this->assertTrue($testmodel->properties()->testing);
     }
+    /** @test */
+    public function it_can_add_extra_properties_with_macro_request()
+    {
+        $requestParams = [
+            'name' => 'Big Leagues',
+            'description' => 'This is when you make it to the big time',
+            'testing' => true,
+        ];
+        $request = $this->createTestIlluminateRequestWithParameters($requestParams);
+        $testmodel = new TestModel();
+        $testmodel->name = $request->name;
+        $testmodel->description = $request->description;
+        $testmodel->properties = $request->overflow($testmodel);
+        $testmodel->save();
+        $this->assertTrue($testmodel->properties()->testing);
+    }
 
     protected function createTestRequestWithParameters($parameters)
     {
         return TestOverflowFormRequest::createFromBase(
+            \Symfony\Component\HttpFoundation\Request::create(
+                'overflowTest/',
+                'POST',
+                $parameters
+            )
+        );
+    }
+
+    protected function createTestIlluminateRequestWithParameters($parameters)
+    {
+        return Request::createFromBase(
             \Symfony\Component\HttpFoundation\Request::create(
                 'overflowTest/',
                 'POST',
