@@ -9,13 +9,12 @@ use Illuminate\Foundation\Http\FormRequest;
 class OverflowFormRequest extends FormRequest
 {
     protected $model;
-    protected $overflow_column;
+    protected $overflow_column = "properties";
 
-    public function __construct(Model $model, $overflow_column = "properties")
+    public function __construct(Model $model)
     {
         parent::__construct();
         $this->model = $model;
-        $this->overflow_column = $overflow_column;
     }
 
     public function allWithOverflow()
