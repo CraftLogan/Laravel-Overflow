@@ -17,6 +17,11 @@ class LaravelOverflowServiceProvider extends ServiceProvider
             $overflow = new LaravelOverflow($this, $model, $properties);
             return $overflow->overflow();
         });
+
+        Request::macro('allWithOverflow', function (Model $model, $properties = "properties") {
+            $overflow = new LaravelOverflow($this, $model, $properties);
+            return $overflow->allWithOverflow();
+        });
     }
 
     /**
