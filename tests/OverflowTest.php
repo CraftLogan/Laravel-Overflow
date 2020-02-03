@@ -107,6 +107,19 @@ class OverflowTest extends TestCase
         $this->assertTrue($testmodel->properties()->testing);
     }
 
+    /** @test */
+    public function it_can_add_extra_properties_with_macro_create_method()
+    {
+        $requestParams = [
+            'name' => 'Big Leagues',
+            'description' => 'This is when you make it to the big time',
+            'testing' => true,
+        ];
+        $request = $this->createTestIlluminateRequestWithParameters($requestParams);
+        $testmodel = TestModel::create($request->allWithOverflow(new TestModel));
+        $this->assertTrue($testmodel->properties()->testing);
+    }
+
     protected function createTestRequestWithParameters($parameters)
     {
         return TestOverflowFormRequest::createFromBase(
