@@ -71,7 +71,7 @@ php artisan migrate
 #### Available Macros
 There are `allWithOverflow` and `overflow` macros.You can payload Model and Overflow Field for each macros.
 
-####`allWithOverflow`
+#### `allWithOverflow`
 This macro returns all fields of model as an array
 ``` php
     $request->allWithOverflow(Model_Name,Overflow_Field)
@@ -84,7 +84,7 @@ This macro returns all fields of model as an array
     ]
 ```
 
-####`overflow`
+#### `overflow`
 This macro returns only Overflow Field as a json object
 ``` php
     $request->overflow(Model_Name,Overflow_Field)
