@@ -146,8 +146,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
+    <td align="center"><a href="https://logancraft.dev"><img src="https://avatars0.githubusercontent.com/u/10950466?v=4" width="100px;" alt=""/><br /><sub><b>Logan H. Craft</b></sub></a><br /><a href="https://github.com/CraftLogan/Laravel-Overflow/commits?author=CraftLogan" title="Code">💻</a> <a href="https://github.com/CraftLogan/Laravel-Overflow/commits?author=CraftLogan" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/DanielGilB"><img src="https://avatars0.githubusercontent.com/u/32772927?v=4" width="100px;" alt=""/><br /><sub><b>Daniel</b></sub></a><br /><a href="https://github.com/CraftLogan/Laravel-Overflow/commits?author=DanielGilB" title="Code">💻</a></td>
-    <td align="center"><a href="https://logancraft.dev"><img src="https://avatars0.githubusercontent.com/u/10950466?v=4" width="100px;" alt=""/><br /><sub><b>Logan H. Craft</b></sub></a><br /><a href="https://github.com/CraftLogan/Laravel-Overflow/commits?author=CraftLogan" title="Code">💻</a></td>
     <td align="center"><a href="https://laravel-news.com"><img src="https://avatars0.githubusercontent.com/u/6818566?v=4" width="100px;" alt=""/><br /><sub><b>Laravel News</b></sub></a><br /><a href="#blog-laravelnews" title="Blogposts">📝</a></td>
     <td align="center"><a href="https://twitter.com/paulredmond"><img src="https://avatars3.githubusercontent.com/u/177773?v=4" width="100px;" alt=""/><br /><sub><b>Paul Redmond</b></sub></a><br /><a href="#blog-paulredmond" title="Blogposts">📝</a></td>
     <td align="center"><a href="http://pierrearnissolle.com"><img src="https://avatars0.githubusercontent.com/u/5046159?v=4" width="100px;" alt=""/><br /><sub><b>Pierre Arnissolle</b></sub></a><br /><a href="https://github.com/CraftLogan/Laravel-Overflow/commits?author=parnissolle" title="Code">💻</a></td>
