@@ -23,61 +23,30 @@ composer require craftlogan/laravel-overflow
 
 ## Usage
 
-Extend a form request using the OverflowFromRequest and specify the model to catch overflow.
+#### Create Model
+
+You should create a model which will use the overflow method.
+```bash
+php artisan make:model TestModel -m
+```
+-m option generates database migration with the model.
 
 ``` php
-<?php
-namespace App\Http\Requests;
+   <?php
+   
+   namespace App;
+   
+   use Illuminate\Database\Eloquent\Model;
+   
+   class TestModel extends Model
+   {
+     
+       protected $guarded = [];   // you should use either $fillable or $guarded
+   }
 
-use Illuminate\Foundation\Http\FormRequest;
-use CraftLogan\LaravelOverflow\Requests\OverflowFormRequest
-
-class CustomFormRequest extends OverflowFormRequest
-{
-    public function __construct()
-    {
-        parent::__construct(new TestModel);  // Your Eloquent Model
-    }
-    /**
-     * Determine if the user is authorized to make this request.
-     *
-     * @return bool
-     */
-    public function authorize()
-    {
-        return true;
-    }
-
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array
-     */
-    public function rules()
-    {
-        return [];
-    }
-}
 ```
 
-Using with the CREATE Method:
-
-``` php
-public function store(CustomFormRequest $request)
-{
-    $testmodel = TestModel::create($request->allWithOverflow());
-}
-```
-
-Using with the object Attributes:
-
-``` php
-        $testmodel = new TestModel();
-        $testmodel->name = $request->name;
-        $testmodel->properties = $request->overflow();
-        $testmodel->save();
-```
-
+#### Edit Migration
 
 When setting up a migration you can use a json column or a text column:
 
@@ -86,6 +55,7 @@ When setting up a migration you can use a json column or a text column:
     {
         Schema::create('test_models', function (Blueprint $table){
             $table->increments('id');
+            $table->string('name');
             //$table->text('properties');  // Use this column type if you are using sqlite or a mysql version less than 5.7
             //$table->json('properties');  // If your database supports json then I would recommend using the json column
             $table->timestamps();
@@ -93,7 +63,68 @@ When setting up a migration you can use a json column or a text column:
     }
 
 ```
+After setting up fields you should migrate your table.
+```bash
+php artisan migrate
+```
 
+#### Available Macros
+There are `allWithOverflow` and `overflow` macros.You can payload Model and Overflow Field for each macros.
+
+#### `allWithOverflow`
+This macro returns all fields of model as an array
+``` php
+    $request->allWithOverflow(Model_Name,Overflow_Field)
+    
+    //Returns
+
+    [
+        "properties" => "{"key1":"key1_value","key2":"key2_value"}",
+        "name" => "overflow"
+    ]
+```
+
+#### `overflow`
+This macro returns only Overflow Field as a json object
+``` php
+    $request->overflow(Model_Name,Overflow_Field)
+
+    //Returns
+
+    "{"key1":"key1_value","key2":"key2_value"}"
+```
+
+#### Insert record via ``create`` method
+
+You can use `Illuminate\Http\Request` for retrieving Http Requests.
+
+``` php
+public function store(Request $request)
+{
+    $testmodel = TestModel::create($request->allWithOverflow(new TestModel(),'properties'));
+}
+```
+Also, you can use your custom `Form Request`.
+
+``` php
+public function store(\App\Http\Requests\TestFormRequest $request)
+{
+    $testmodel = TestModel::create($request->allWithOverflow(new TestModel(),'properties'));
+}
+```
+#### Insert record via ``save`` method
+
+Using with the object Attributes:
+
+``` php
+    public function store(Request $request)
+    {
+        $testmodel = new TestModel();
+        $testmodel->name = $request->name;
+        $testmodel->properties = $request->overflow(new TestModel(),'properties');
+        $testmodel->save();
+    }   
+```
 
 ### Testing
 
