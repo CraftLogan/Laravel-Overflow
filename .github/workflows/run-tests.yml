@@ -13,9 +13,11 @@ jobs:
             fail-fast: true
             matrix:
                 php: [7.4, 7.3, 7.2]
-                laravel: [7.*, 6.*]
+                laravel: [8.*, 7.*, 6.*]
                 dependency-version: [prefer-lowest, prefer-stable]
                 include:
+                    - laravel: 8.*
+                      testbench: 6.*
                     - laravel: 7.*
                       testbench: 5.*
                     - laravel: 6.*
@@ -46,3 +48,4 @@ jobs:
                   composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction --no-suggest
             - name: Execute tests
               run: vendor/bin/phpunit
+              
